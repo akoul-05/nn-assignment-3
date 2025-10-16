@@ -44,7 +44,9 @@ def train(
     # create loss function and optimizer
     loss_func = ClassificationLoss()
     # optimizer = ...
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    #optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=1e-4)
+
 
     global_step = 0
 

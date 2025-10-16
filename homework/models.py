@@ -136,7 +136,7 @@ class MLPClassifierDeepResidual(nn.Module):
         h: int = 64,
         w: int = 64,
         num_classes: int = 6,
-        hidden_dim: int = 1024,
+        hidden_dim: int = 256,
         num_layers: int = 4,
         dropout: float = 0.1,
     ):

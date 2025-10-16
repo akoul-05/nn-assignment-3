@@ -75,6 +75,7 @@ def train(
 
             global_step += 1
 
+        model.eval()
         with torch.inference_mode():
             for img, label in val_data:
                 img, label = img.to(device), label.to(device)
@@ -121,6 +122,7 @@ if __name__ == "__main__":
     parser.add_argument("--num_epoch", type=int, default=50)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=2024)
+    parser.add_argument("--batch_size", type=int, default=128)
 
     # optional: additional model hyperparamters
     # parser.add_argument("--num_layers", type=int, default=3)

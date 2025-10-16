@@ -83,7 +83,7 @@ class TransformerBlock(nn.Module):
         x = x + self.attn_dropout(attn_output)
 
         x_norm2 = self.norm2(x)
-        x = x + self.mlp_drop(self.mlp(x_norm2))
+        x = x + self.mlp_dropout(self.mlp(x_norm2))
         return x
         #raise NotImplementedError("TransformerBlock.forward() is not implemented")
 
@@ -155,7 +155,7 @@ class MLPClassifierDeepResidual(nn.Module):
         super().__init__()
         dim = h * w * 3  # input dimension
         self.flatten = nn.Flatten()
-        self.input = nn.sequential(
+        self.input_proj = nn.Sequential(
             nn.Linear(dim, hidden_dim),
             nn.GELU(),)
         

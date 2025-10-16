@@ -9,7 +9,7 @@ Feel free to modify the arguments for each of model's __init__ function.
 This will be useful for tuning model hyperparameters such as hidden_dim, num_layers, etc,
 but remember that the grader will assume the default constructor!
 """
-
+# Used Copilot to help with some autocompletion
 from pathlib import Path
 
 import torch
@@ -131,6 +131,7 @@ class PatchEmbedding(nn.Module):
 
 
 class MLPClassifierDeepResidual(nn.Module):
+    # Tweaked values to get better scores.
     def __init__(
         self,
         h: int = 64,
@@ -224,6 +225,7 @@ class ViTClassifier(nn.Module):
 
         Note: You can use the provided PatchEmbedding class. You'll need to implement the TransformerBlock class.
         """
+        # Copilot used and provided some suggestions, to improve code logic.
         super().__init__()
         img_size = h
         self.patch_embed = PatchEmbedding(

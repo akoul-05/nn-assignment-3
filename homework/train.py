@@ -9,6 +9,7 @@ import torch.utils.tensorboard as tb
 from .models import ClassificationLoss, load_model, save_model
 from .utils import load_data
 
+# Used Copilot to help with some autocompletion
 
 def train(
     exp_dir: str = "logs",
@@ -45,6 +46,7 @@ def train(
     loss_func = ClassificationLoss()
     # optimizer = ...
     #optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    # Used Copilot suggested to add weight decay
     optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=1e-4)
 
 
